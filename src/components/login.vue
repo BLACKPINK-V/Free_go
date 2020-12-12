@@ -3,7 +3,9 @@
   <div class="login">
     <div class="login_box">
       <!-- logo区 -->
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="../assets/logo.png" alt="">
+      </div>
       <!-- 登录表单区 -->
       <el-form
         label-width="0px"
@@ -110,7 +112,7 @@ export default {
 <style lang="less" scoped>
 .login {
   height: 100%;
-  background-color: #ff6700;
+  background-color: #fcf4ef;
 
   /* display: flex;
         justify-content: center;
@@ -126,20 +128,26 @@ export default {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+    box-shadow: 0 0 10px #ddd;
 
     .logo {
-      width: 140px;
-      height: 140px;
-      border: 2px solid #2b4b6b;
+      width: 120px;
+      height: 120px;
+      border: 2px solid #fff;
       border-radius: 50%;
-      background-color: palegreen;
-      background: url(../assets/logo.gif) no-repeat 50% 50%;
-      background-size: 240px 180px;
+      background-color: red;
       position: absolute;
       left: 50%;
-      top: -25%;
+      top: -20%;
       transform: translate(-50%);
-      box-shadow: 0 0 10px #ddd;
+      box-shadow: 0 0 10px rgb(105, 101, 101);
+      img{
+        width: 113px;
+        height: 96px;
+        position: absolute;
+        left: 2px;
+        top: 15px;
+      }
     }
     form {
       position: absolute;
