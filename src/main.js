@@ -14,7 +14,7 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
 //添加请求拦截器
 axios.interceptors.request.use((config) => {
-  console.log(config);
+  // console.log(config);
   // 请求头 添加 token
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 最后必须 return config
