@@ -4,11 +4,14 @@ import Login from "../components/login.vue"
 import Home from "../components/home.vue"
 import Welcome from "../components/Welcome.vue"
 import User from "../components/User/User.vue"
+import Rights from "../components/power/Rights.vue"
+import Roles from '../components/power/Roles.vue'
 
 
 
 Vue.use(VueRouter)
 
+// 实例化路由器
 const router = new VueRouter({
   // 路由规则
   routes: [
@@ -21,6 +24,8 @@ const router = new VueRouter({
       children: [
         { path: '/welcome', component: Welcome },
         { path: '/users', component: User },
+        { path: '/rights', component: Rights },
+        { path: '/roles', component: Roles }
       ]
     }
   ]
