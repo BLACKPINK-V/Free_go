@@ -9,6 +9,7 @@ import './assets/font/iconfont.css'
 import './assets/css/global.css'
 // 导入 axios
 import axios from 'axios'
+import TreeTable from 'vue-table-with-tree-grid'
 
 // Vue 原型上挂在 axios  配置基准地址
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
@@ -23,6 +24,8 @@ axios.interceptors.request.use((config) => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+
+Vue.component('tree-table', TreeTable)
 
 new Vue({
   // 挂在路由

@@ -16,3 +16,12 @@ body,
     font-size: 12px;
     margin-bottom: 20px;
 }
+/* .el-popper{
+top: 42% !important;
+} */
+.el-scrollbar{
+    height: 200px !important;
+}
+.el-cascader{
+    width: 100%;
+}
