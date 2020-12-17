@@ -147,7 +147,7 @@
           label-width="70px"
         >
           <el-form-item label="用户名" prop="username">
-            <el-input v-model="editForm.username"></el-input>
+            <el-input v-model="editForm.username" :disabled="true"></el-input>
           </el-form-item>
           <el-form-item label="邮箱" prop="email">
             <el-input v-model="editForm.email"></el-input>
@@ -455,7 +455,7 @@ export default {
       const request = await this.$http.delete(`users/${id}`)
       console.log(request)
       if (request.data.meta.status !== 200) {
-        return this.$message.error('删除用户失败!')
+        return this.$message.error(request.data.meta.msg)
       }
       // 刷新数据列表
       this.getUserList()
