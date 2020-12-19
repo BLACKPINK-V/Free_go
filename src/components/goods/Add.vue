@@ -212,7 +212,7 @@ export default {
     // 获取所有商品分类数据
     async getCateList() {
       const res = await this.$http.get('categories')
-      console.log(res)
+      // console.log(res)
       if (res.data.meta.status !== 200) {
         return this.$message({
           message: '获取商品分类信息失败!',
@@ -256,7 +256,7 @@ export default {
             duration: 3000
           })
         }
-        console.log(res.data.data)
+        // console.log(res.data.data)
         // 将 vals 这一项由字符串变为数组
         res.data.data.forEach(value => {
           value.attr_vals = value.attr_vals ? value.attr_vals.split(' ') : []
@@ -274,9 +274,9 @@ export default {
             duration: 3000
           })
         }
-        console.log(res.data.data)
+        // console.log(res.data.data)
         this.onlyTabDate = res.data.data
-        console.log(this.onlyTabDate)
+        // console.log(this.onlyTabDate)
       }
     },
     // 处理图片预览效果
@@ -309,7 +309,7 @@ export default {
     },
     // 添加商品按钮
     add() {
-      console.log(this.addForm)
+      // console.log(this.addForm)
       this.$refs.addFormRef.validate(async valid => {
         if (!valid) {
           return this.$message({
@@ -337,12 +337,12 @@ export default {
           this.addForm.attrs.push(newInfo)
         })
         form.attrs = this.addForm.attrs
-        console.log(form)
+        // console.log(form)
 
         // 发起请求添加商品
         // 商品的名称 必须是唯一的
         const res = await this.$http.post(`goods`, form)
-        console.log(res)
+        // console.log(res)
         if (res.data.meta.status !== 201) {
           return this.$message({
             message: '添加商品 数据失败!',

@@ -133,7 +133,7 @@ export default {
     },
     // 根据商品id 删除商品
     async removeById(goods_id) {
-      console.log(goods_id)
+      // console.log(goods_id)
       // 询问用户是否删除
       const res = await this.$confirm(
         '此操作将永久删除该商品, 是否继续?',

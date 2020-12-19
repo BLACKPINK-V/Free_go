@@ -41,7 +41,7 @@ Vue.use(VueQuillEditor)
 
 // 定义一个全局过滤器 格式化时间戳
 Vue.filter('dateFormat', function (originVal) {
-  const dt = new Date(originVal)
+  const dt = new Date(originVal*1000)
 
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')

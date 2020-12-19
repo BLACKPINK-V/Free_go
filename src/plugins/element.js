@@ -1,8 +1,9 @@
 import Vue from 'vue'
 // 按需导入
-import { Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Menu, Submenu, MenuItem, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Step, Steps, CheckboxGroup, Checkbox, Upload } from 'element-ui'
+import { Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Menu, Submenu, MenuItem, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination, Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Step, Steps, CheckboxGroup, Checkbox, Upload,} from 'element-ui'
 // Message  弹框组件
-
+// import Timeline from './timeline/index.js'
+// import TimelineItem from './timeline-item/index1.js'
 
 Vue.use(Button)
 Vue.use(Form)
@@ -39,6 +40,8 @@ Vue.use(Steps)
 Vue.use(CheckboxGroup)
 Vue.use(Checkbox)
 Vue.use(Upload)
+// Vue.use(Timeline)
+// Vue.use(TimelineItem)
 // 全局挂载 Message
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
