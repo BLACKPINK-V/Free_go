@@ -1,7 +1,9 @@
 import Vue from 'vue'
 // 导入根组件 App.vue
 import App from './App.vue'
+// 导入 路由
 import router from './router'
+// 导入 ElementUI
 import './plugins/element.js'
 // 导入字体图标
 import './assets/font/iconfont.css'
@@ -16,6 +18,9 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
+// 导入 NProgress 宝对应的js 和 css文件
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 
@@ -23,11 +28,18 @@ import 'quill/dist/quill.bubble.css' // for bubble theme
 // Vue 原型上挂在 axios  配置基准地址
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
 //添加请求拦截器
+// 在 request 拦截器中 展示进度条 NProgress.start()
 axios.interceptors.request.use((config) => {
+  NProgress.start()
   // console.log(config);
   // 请求头 添加 token
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 最后必须 return config
+  return config
+})
+// 在 response 拦截器中 隐藏进度条 NProgress.done()
+axios.interceptors.response.use((config) => {
+  NProgress.done()
   return config
 })
 Vue.prototype.$http = axios
@@ -41,7 +53,7 @@ Vue.use(VueQuillEditor)
 
 // 定义一个全局过滤器 格式化时间戳
 Vue.filter('dateFormat', function (originVal) {
-  const dt = new Date(originVal*1000)
+  const dt = new Date(originVal * 1000)
 
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')
